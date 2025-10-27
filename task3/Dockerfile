@@ -2,9 +2,9 @@ FROM node:16-alpine
 
 WORKDIR /home/ilovedocker/app
 
-COPY package*.json .
+COPY packages/package*.json .
 
-RUN npm i
+RUN npm ci --only=production
 
 COPY src/ .
 
